@@ -25,4 +25,9 @@ elementi prelevati saranno stampati a video. Una volta istanziati i
 processi, tramite la primitiva `fork()`, il programma principale ne
 attende la terminazione e termina a sua volta.
 
+File da modificare:
+- main.c
+- prodcons.h
+- prodcons.c
+
 ![image](https://github.com/rnatella/esercizi_linux/blob/master/images/ambiente_globale/produttore_consumatore/prelievi_multipli.png)
