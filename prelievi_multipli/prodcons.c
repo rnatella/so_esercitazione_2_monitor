@@ -61,7 +61,7 @@ void produci(ProdCons * p, int val) {
     printf("[%d] Produzione: val=%d\n", getpid(), val);
 
     
-    /* TBD: Svegliare un consumatore *solo se* si sono liberati almeno 2 buffer. 
+    /* TBD: Svegliare un consumatore *solo se* sono disponibili almeno 2 messaggi. 
      *      Poiché è richiesto di utilizzare la semantica di Hoare, il consumatore
      *      sarà attivato immediatamente al momento della signal_condition().
      */
