@@ -10,13 +10,13 @@
 
 int main(){
 
-	/* TBD: Creare una variabile M di tipo "Monitor", e inizializzarla con init_monitor() */
+	/* TBD: Creare in memoria condivisa un'area per contenere un oggetto "MonitorMeteo" */
 
-	key_t id_meteo = shmget(IPC_PRIVATE,sizeof(Buffer),IPC_CREAT|0664);
-	Buffer * buf = (Buffer*) (shmat(id_meteo,0,0));
+	key_t id_meteo = /* TBD */;
+	MonitorMeteo * p = /* TBD */;
 
-	/* TBD: inizializzare la struttura Buffer */
-	
+	/* TBD: inizializzare il MonitorMeteo, incluso il sotto-oggetto Monitor con init_monitor() */
+
 
 	pid_t pid;
 
@@ -25,7 +25,7 @@ int main(){
 
 		pid=fork();
 		if (pid==0) {
-			Utente(&M,buf);
+			Utente(p);
 			exit(0);
      	} else if(pid<0) {
 			perror("fork");
@@ -35,7 +35,7 @@ int main(){
 
 	pid=fork();
 	if (pid==0) {
-		Servizio(&M,buf);
+		Servizio(p);
 		exit(0);
 	} else if(pid<0) {
 		perror("fork");
@@ -49,9 +49,9 @@ int main(){
 			perror("errore");
 	}
 
-	shmctl(id_meteo,IPC_RMID,0);
+	/* TBD: Deallocare il sotto-oggetto Monitor con remove_monitor() */
 
-	/* TBD: Deallocare la variabile Monitor con remove_monitor() */
+	/* TBD: Deallocare la memoria condivisa */
 
 	return 0;
 }

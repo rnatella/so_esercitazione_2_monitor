@@ -5,13 +5,13 @@
 
 #include "header.h"
 
-void InizioLettura(Monitor* m, Buffer * buf){
-	
+void InizioLettura(MonitorMeteo* p){
+
 	/* TBD: Effettuare inizio lettura */
 
 }
 
-void FineLettura(Monitor* m, Buffer * buf) {
+void FineLettura(MonitorMeteo* p) {
 
 	/* TBD: Effettuare fine lettura */
 
@@ -21,19 +21,19 @@ void FineLettura(Monitor* m, Buffer * buf) {
 
 //Procedure di inizio e fine scrittura
 
-void InizioScrittura(Monitor* m,Buffer*buf){
+void InizioScrittura(MonitorMeteo* p){
 
 	/* TBD: Effettuare inizio scrittura */
 }
 
-void FineScrittura(Monitor* m, Buffer*buf){
+void FineScrittura(MonitorMeteo* p){
 
 	/* TBD: Effettuare inizio scrittura */
 }
 
 
 
-void Servizio(Monitor* m, Buffer * buf){
+void Servizio(MonitorMeteo* p){
 
 	srand(time(0));
 
@@ -42,25 +42,25 @@ void Servizio(Monitor* m, Buffer * buf){
 
 		/* TBD: Richiamare InizioScrittura e FineScrittura */
 
-		buf->meteo.temperatura = (rand()%101)-50;
-		buf->meteo.umidita = rand()%101;
-		buf->meteo.pioggia = rand()%2;
+		p->meteo.temperatura = (rand()%101)-50;
+		p->meteo.umidita = rand()%101;
+		p->meteo.pioggia = rand()%2;
 
-		printf("<%d> scrittura: Temperatura=%d, Umidità=%d, Pioggia=%s\n", getpid(), buf->meteo.temperatura, buf->meteo.umidita, (buf->meteo.pioggia ? "si" : "no") );
+		printf("<%d> scrittura: Temperatura=%d, Umidità=%d, Pioggia=%s\n", getpid(), p->meteo.temperatura, p->meteo.umidita, (p->meteo.pioggia ? "si" : "no") );
 
 		sleep(2);
 	}
 
 }
 
-void Utente(Monitor* m, Buffer * buf) {
+void Utente(MonitorMeteo* p) {
 
 	int i;
 	for(i=0; i<10; i++) {
-		
+
 		/* TBD: Richiamare InizioLettura e FineLettura */
 
-		printf("<%d> lettura: Temperatura=%d, Umidità=%d, Pioggia=%s\n", getpid(), buf->meteo.temperatura, buf->meteo.umidita, (buf->meteo.pioggia ? "si" : "no") );
+		printf("<%d> lettura: Temperatura=%d, Umidità=%d, Pioggia=%s\n", getpid(), p->meteo.temperatura, p->meteo.umidita, (p->meteo.pioggia ? "si" : "no") );
 
 		sleep(1);
 	}

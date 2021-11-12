@@ -1,10 +1,6 @@
 #include "monitor_hoare.h"
 
 #define NUM_UTENTI 10
-#define NUM_CONDITIONS 2
-
-#define SYNCHL 0
-#define SYNCHS 1
 
 typedef struct {
 	int temperatura;
@@ -14,11 +10,12 @@ typedef struct {
 
 typedef struct {
 	meteo meteo;
-	
-	/* TBD: aggiungere qui le variabili di stato per la sincronizzazione */
-	
-} Buffer;
+
+	/* TBD: Aggiungere un sotto-oggetto Monitor e altre variabili di stato
+	 * per la sincronizzazione */
+
+} MonitorMeteo;
 
 
-void Servizio(Monitor* m, Buffer * buf);
-void Utente(Monitor* m, Buffer * buf);
+void Servizio(MonitorMeteo* p);
+void Utente(MonitorMeteo* p);
