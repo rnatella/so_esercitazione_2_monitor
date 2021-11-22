@@ -28,7 +28,7 @@ void InizioScrittura(MonitorMeteo* p){
 
 void FineScrittura(MonitorMeteo* p){
 
-	/* TBD: Effettuare inizio scrittura */
+	/* TBD: Effettuare fine scrittura */
 }
 
 
