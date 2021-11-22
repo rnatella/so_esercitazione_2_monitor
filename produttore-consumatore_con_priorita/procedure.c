@@ -46,23 +46,29 @@ void produci_alta_prio(PriorityProdCons* p){
 	p->count++;
 
 	//Il buffer non è vuoto
-	printf("Produttore 1 con pid %d ha prodotto %d\n",getpid(),value);	
-	
+	printf("Produttore 1 con pid %d ha prodotto %d\n",getpid(),value);
+
 	/* TBD: Effettuare la signal_condition per i consumatori in attesa */
-	
+
 	/* TBD: Uscire dal monitor */
 }
 
 void produci_bassa_prio(PriorityProdCons* p){
 
 	int value;
-	
+
 	/* TBD: Effettuare l'ingresso nel monitor */
-	
+
 	//Aumenta il numero di produttori
 	printf("Produttore 2 entrato nel monitor...\n");
-	
-	/* TBD: Sospendere qui il processo se il vettore di buffer è pieno */
+
+	/* TBD: Sospendere qui il processo nei seguenti due possibili casi:
+	 *      1) Il vettore di buffer è pieno; oppure
+	 *      2) Un produttore ad alta priorità è già sospeso in attesa.
+	 *         Si suggerisce di usare queue_condition() oppure una variabile
+	 *         intera "num_lettori_alta_priorita", vedi suggerimenti nel
+	 *         commento della funzione consuma().
+	 */
 
 	//Produco il valore
 	value = 13 + (rand() % 12) ;
@@ -73,7 +79,7 @@ void produci_bassa_prio(PriorityProdCons* p){
 	p->count++;
 
 	//Il buffer non è vuoto
-	printf("Produttore 2 con pid %d ha prodotto %d\n",getpid(),value);	
+	printf("Produttore 2 con pid %d ha prodotto %d\n",getpid(),value);
 
 	/* TBD: Effettuare la signal_condition per i consumatori in attesa */
 
@@ -100,12 +106,12 @@ void consuma(PriorityProdCons* p){
 	/* TBD: Effettuare la signal_condition per attivare un produttore.
 	 *      Si attivi un produttore di priorità alta se presente, altrimenti,
 	 *      si attivi un produttore di priorità bassa.
-	 * 
+	 *
 	 * 		Per determinare se ci sono produttori ad alta priorità in attesa,
 	 * 		si introduca una variabile "num_lettori_alta_priorita", che i produttori
 	 *      incrementano subito prima di fare wait_condition(), e che decrementano
 	 * 		subito dopo aver eseguito wait_condition().
-	 * 
+	 *
 	 * 		In alternativa, utilizzare la funzione "queue_condition()".
 	 */
 
