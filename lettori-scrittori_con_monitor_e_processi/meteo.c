@@ -12,7 +12,8 @@ int main(){
 
 	/* TBD: Creare in memoria condivisa un'area per contenere un oggetto "MonitorMeteo" */
 
-	key_t id_meteo = /* TBD */;
+	key_t chiave_shm = /* TBD */;
+	int id_shm = /* TBD */;
 	MonitorMeteo * p = /* TBD */;
 
 	/* TBD: inizializzare il MonitorMeteo, incluso il sotto-oggetto Monitor con init_monitor() */
