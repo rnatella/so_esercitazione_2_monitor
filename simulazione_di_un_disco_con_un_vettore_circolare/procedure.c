@@ -57,7 +57,7 @@ void Schedulatore(MonitorSchedulatore * s) {
 
 
 		/*
-		  Lo Schedulatore preleva una richiesta, che verrà copiata
+		  Lo Schedulatore preleva una richiesta, che andrà inserita
 		  nella variabile locale "r"
 		*/
 
@@ -154,4 +154,4 @@ void PrelevaRichiesta(MonitorSchedulatore * s, richiesta * r) {
 	/* TBD: Uscire dal monitor */
 }
 
- 
+
