@@ -11,6 +11,6 @@ monitor_signal_continue.o: monitor_signal_continue.c monitor_signal_continue.h
 	gcc -c monitor_signal_continue.c
       
 clean:
-	rm -f *.o 
+	rm -f *.o
 	rm -f start
 
