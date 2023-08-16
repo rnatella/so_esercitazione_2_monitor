@@ -9,7 +9,7 @@
 int main()
 {
 
-    int shm_id = /* TBD: Allocazione della struttura dati in shared memory */
+    int shm_id = /* TBD: Allocazione di una shared memory per l'oggetto-monitor */
 
     if (shm_id < 0)
     {
@@ -25,7 +25,9 @@ int main()
         exit(1);
     }
 
-    inizializza(p);
+
+    /* TBD: Inizializzare l'oggetto-monitor, chiamando la funzione di inizializzazione */
+
 
     for (int i = 0; i < 5; i++)
     {
@@ -46,7 +48,9 @@ int main()
 
                 int val = rand() % 10;
 
-                produci(p, val);
+                /* TBD: Chiamare il metodo "produci()" dell'oggetto-monitor,
+                 *      passando in ingresso "val".
+                 */
 
                 sleep(2);
             }
@@ -72,7 +76,9 @@ int main()
 
                 int val_1, val_2;
 
-                consuma(p, &val_1, &val_2);
+                /* TBD: Chiamare il metodo "consuma()" dell'oggetto-monitor,
+                 *      passando in ingresso "&val_1" e "&val_2" (parametri di uscita).
+                 */
 
                 sleep(1);
             }
@@ -90,7 +96,12 @@ int main()
 
     printf("[%d] Terminazione\n", getpid());
 
-    rimuovi(p);
+
+    /* TBD: De-inizializzare l'oggetto-monitor, chiamando la funzione di rimozione */
+
+
+    /* TBD: De-allocazione della shared memory */
+
 
     return 0;
 }

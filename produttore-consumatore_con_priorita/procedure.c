@@ -33,7 +33,7 @@ void produci_alta_prio(PriorityProdCons* p){
 	/* TBD: Effettuare l'ingresso nel monitor */
 
 	//Aumenta il numero di produttori
-	printf("Produttore 1 entrato nel monitor...\n");
+	printf("Produttore 1 entrato nel monitor\n");
 
 	/* TBD: Sospendere qui il processo se il vettore di buffer è pieno */
 
@@ -59,8 +59,7 @@ void produci_bassa_prio(PriorityProdCons* p){
 
 	/* TBD: Effettuare l'ingresso nel monitor */
 
-	//Aumenta il numero di produttori
-	printf("Produttore 2 entrato nel monitor...\n");
+	printf("Produttore 2 entrato nel monitor\n");
 
 	/* TBD: Sospendere qui il processo nei seguenti due possibili casi:
 	 *      1) Il vettore di buffer è pieno; oppure
@@ -70,16 +69,17 @@ void produci_bassa_prio(PriorityProdCons* p){
 	 *         commento della funzione consuma().
 	 */
 
-	//Produco il valore
+
+	// Produzione
+
 	value = 13 + (rand() % 12) ;
 
-	//Modifico il buffer
 	p->buffer[p->testa] = value;
 	p->testa = (p->testa + 1) % DIM;
 	p->count++;
 
-	//Il buffer non è vuoto
 	printf("Produttore 2 con pid %d ha prodotto %d\n",getpid(),value);
+
 
 	/* TBD: Effettuare la signal_condition per i consumatori in attesa */
 
@@ -95,6 +95,8 @@ void consuma(PriorityProdCons* p){
 
 	/* TBD: Sospendere qui il processo se il vettore di buffer è vuoto */
 
+
+	// Consumazione
 
 	value = p->buffer[p->coda];
 	p->coda = (p->coda + 1) % DIM;
@@ -117,4 +119,6 @@ void consuma(PriorityProdCons* p){
 
 
 	/* TBD: Uscire dal monitor */
+
 }
+

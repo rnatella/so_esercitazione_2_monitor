@@ -1,0 +1,44 @@
+{
+  "tests": [
+    {
+      "name": "Simulazione di un disco con un vettore circolare, con monitor",
+      "setup": "pip3 -qqq install semgrep && sudo apt -qq install expect 2>/dev/null >/dev/null",
+      "run": "/bin/bash ./simulazione_di_un_disco_con_un_vettore_circolare/.test/simulazione-disco.sh",
+      "input": "",
+      "output": "pass",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Prelievi multipli",
+      "setup": "",
+      "run": "/bin/bash  ./prelievi_multipli/.test/prelievi-multipli.sh",
+      "input": "",
+      "output": "pass",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Lettori-scrittori con monitor e processi",
+      "setup": "",
+      "run": "/bin/bash  ./lettori-scrittori_con_monitor_e_processi/.test/lettori-scrittori.sh",
+      "input": "",
+      "output": "pass",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Produttore-consumatore con priorità",
+      "setup": "",
+      "run": "/bin/bash  ./produttore-consumatore_con_priorita/.test/prod-cons-prio.sh",
+      "input": "",
+      "output": "pass",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    }
+  ]
+}
