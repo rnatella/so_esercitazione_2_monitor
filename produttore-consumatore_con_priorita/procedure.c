@@ -69,7 +69,7 @@ void produci_bassa_prio(PriorityProdCons* p){
 	 *      1) Il vettore di buffer è pieno; oppure
 	 *      2) Un produttore ad alta priorità è già sospeso in attesa.
 	 *         Si suggerisce di usare queue_condition() oppure una variabile
-	 *         intera "num_lettori_alta_priorita", vedi suggerimenti nel
+	 *         intera "num_produttori_alta_priorita", vedi suggerimenti nel
 	 *         commento della funzione consuma().
 	 */
 
@@ -118,7 +118,7 @@ void consuma(PriorityProdCons* p){
 	 *      si attivi un produttore di priorità bassa.
 	 *
 	 * 		Per determinare se ci sono produttori ad alta priorità in attesa,
-	 * 		si introduca una variabile "num_lettori_alta_priorita", che i produttori
+	 * 		si introduca una variabile "num_produttori_alta_priorita", che i produttori
 	 *      incrementano subito prima di fare wait_condition(), e che decrementano
 	 * 		subito dopo aver eseguito wait_condition().
 	 *
