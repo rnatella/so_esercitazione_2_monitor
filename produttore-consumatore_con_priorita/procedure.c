@@ -26,9 +26,7 @@ void rimuovi_prod_cons(PriorityProdCons* p){
 }
 
 
-void produci_alta_prio(PriorityProdCons* p){
-
-	int value;
+void produci_alta_prio(PriorityProdCons* p, int value){
 
 	/* TBD: Effettuare l'ingresso nel monitor */
 
@@ -39,8 +37,6 @@ void produci_alta_prio(PriorityProdCons* p){
 
 
 	// Produzione
-
-	value = rand() % 12;
 
 	p->buffer[p->testa] = value;
 	p->testa = (p->testa + 1) % DIM;
@@ -56,9 +52,7 @@ void produci_alta_prio(PriorityProdCons* p){
 
 }
 
-void produci_bassa_prio(PriorityProdCons* p){
-
-	int value;
+void produci_bassa_prio(PriorityProdCons* p, int value){
 
 	/* TBD: Effettuare l'ingresso nel monitor */
 
@@ -75,8 +69,6 @@ void produci_bassa_prio(PriorityProdCons* p){
 
 
 	// Produzione
-
-	value = 13 + (rand() % 12);
 
 	p->buffer[p->testa] = value;
 	p->testa = (p->testa + 1) % DIM;
@@ -128,5 +120,6 @@ void consuma(PriorityProdCons* p){
 
 	/* TBD: Uscire dal monitor */
 
+	return value;
 }
 
