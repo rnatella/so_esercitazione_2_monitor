@@ -2,7 +2,7 @@
   "tests": [
     {
       "name": "Simulazione di un disco con un vettore circolare, con monitor",
-      "setup": "pip3 -qqq install semgrep && sudo apt -qq install expect 2>/dev/null >/dev/null",
+      "setup": "pip3 -qqq install semgrep==1.76.0 && sudo apt -qq install expect 2>/dev/null >/dev/null",
       "run": "/bin/bash ./simulazione_di_un_disco_con_un_vettore_circolare/.test/simulazione-disco.sh",
       "input": "",
       "output": "pass",
