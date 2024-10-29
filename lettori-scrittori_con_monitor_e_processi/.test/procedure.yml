@@ -129,3 +129,4 @@ rules:
           metavariable: $CONDITION
           patterns:
             - pattern-not: "$NUM_LETTORI > 0 || $NUM_SCRITTORI > 0"
+            - pattern-not: "$NUM_LETTORI != 0 || $NUM_SCRITTORI != 0"

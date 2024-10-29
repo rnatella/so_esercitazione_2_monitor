@@ -3,7 +3,7 @@ rules:
     languages:
       - c
     severity: ERROR
-    message: "È un monitor signal and continue, è necessario un ciclo"
+    message: "È un monitor signal and continue, è necessario utilizzare wait_condition() all'interno di un ciclo."
     patterns:
       - pattern: |
           enter_monitor(...);
@@ -31,19 +31,17 @@ rules:
     languages:
       - c
     severity: WARNING
-    message: "Controllare l'inizializazione delle variabili. Assicurarsi di aver inizializzato TUTTE le variabili della struttura. Le variabile che si consiglia di inizializzare sono: testa, coda, count, num_produttori_alta_prio."
+    message: "Controllare l'inizializazione delle variabili. Assicurarsi di aver inizializzato TUTTE le variabili della struttura dati."
     patterns:
       - pattern: |
           void inizializza_prod_cons(...){
-            $P = $A;
             ...
-            init_monitor(...);
           }
       - pattern-not: |
           void inizializza_prod_cons(...){
             $P = $A;
             $Q = $B;
             $R = $C;
-            $S = $D;
+            ...
             init_monitor(...);
           }

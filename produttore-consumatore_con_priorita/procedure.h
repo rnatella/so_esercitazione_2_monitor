@@ -9,8 +9,13 @@ typedef struct{
 	int buffer[DIM];
 	
 	/* TBD: Completare la definizione di questa struttura,
-	 *      aggiungendo un sotto-oggetto Monitor, le variabili testa e coda,
-	 *      ed eventualmente (a scelta dello studente) una variabile "contatore"
+	 *      aggiungendo le seguenti variabili:
+	 *       - un sotto-oggetto Monitor (per la sincronizzazione)
+	 *       - le variabili "testa" e "coda"
+	 *       - una variabile "contatore", per contare
+	 *         il numero di elementi occupati nel vettore di buffer
+	 *       - (opzionale) una variabile "num_produttori_alta_priorita",
+	 *         per contare il numero di processi ad alta priorità che sono sospesi
 	 */
 }PriorityProdCons;
 
